@@ -2,12 +2,20 @@ Project structure:
 
 ├── app
 │   ├── __init__.py
+│   ├── models.py
+│   ├── routes
+│   │   ├── __init__.py
+│   │   └── main.py
 │   ├── routes.py
 │   ├── static
-│   │   ├── flyer.png
 │   │   └── img
+│   │       └── flyer.png
 │   └── templates
+│       ├── dashboard.html
 │       └── index.html
+├── instance
+│   └── site.db
 ├── print_structure.py
+├── project_structure.txt
 ├── requirements.txt
 └── run.py
