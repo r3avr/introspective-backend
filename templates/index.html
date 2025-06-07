@@ -1,36 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Introspective</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Introspective | Orlando's Drum & Bass Weekly</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   <style>
     body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
       background-color: #0f0f0f;
       color: #ffffff;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
       flex-direction: column;
+      align-items: center;
     }
 
-    img {
-      max-width: 90%;
-      height: auto;
-      border: 2px solid #fff;
+    header {
+      padding: 40px 20px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #aaaaaa;
+      margin-top: 8px;
+    }
+
+    .flyer {
+      width: 90%;
+      max-width: 600px;
       border-radius: 12px;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+      margin-bottom: 40px;
     }
 
-    h1 {
-      margin-bottom: 20px;
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to Introspective</h1>
-  <img src="{{ url_for('static', filename='img/flyer.png') }}" alt="Flyer">
+
+  <header>
+    <h1>Introspective</h1>
+    <p>Orlando's Tuesday Drum & Bass Ritual</p>
+  </header>
+
+  <img class="flyer" src="{{ url_for('static', filename='img/flyer.png') }}" alt="This Week's Flyer">
+
+  <footer>
+    © {{ now.year }} Introspective · Orlando, FL
+  </footer>
+
 </body>
 </html>
