@@ -1,0 +1,13 @@
+Project structure:
+
+├── app
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── static
+│   │   ├── flyer.png
+│   │   └── img
+│   └── templates
+│       └── index.html
+├── print_structure.py
+├── requirements.txt
+└── run.py
