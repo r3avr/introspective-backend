@@ -1,50 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Introspective</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
       background-color: #0f0f0f;
       color: #ffffff;
-      margin: 0;
       font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding-top: 60px;
     }
 
     h1 {
-      margin-bottom: 20px;
+      margin: 0 0 40px 0;
       font-size: 2em;
-      text-align: center;
     }
 
     img {
-      width: 20%;
-      max-width: 200px;
+      width: 60%;
+      max-width: 800px;
       height: auto;
       border: 2px solid #ffffff22;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-      margin-top: 10px;
+      margin-bottom: 40px;
     }
 
     p {
-      margin-top: 30px;
+      margin: 0;
       font-size: 1rem;
-      text-align: center;
-      max-width: 600px;
-      line-height: 1.5;
       color: #bbbbbb;
+      max-width: 600px;
     }
   </style>
 </head>
 <body>
-  <h1>Page Under Construction</h1>
-  <img src="{{ url_for('static', filename='img/flyer.png') }}" alt="Flyer">
-  <p>More Coming Soon</p>
+  <div class="container">
+    <h1>Page Under Construction</h1>
+    <img src="{{ url_for('static', filename='img/flyer.png') }}" alt="Flyer">
+    <p>More Coming Soon</p>
+  </div>
 </body>
 </html>
