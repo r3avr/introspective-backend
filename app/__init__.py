@@ -1,6 +1,6 @@
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from flask import Flask
 
 db = SQLAlchemy()
 login_manager = LoginManager()
@@ -13,7 +13,7 @@ def create_app():
     db.init_app(app)
     login_manager.init_app(app)
 
-    from .models import User
+    from app.models import User
 
     @login_manager.user_loader
     def load_user(user_id):

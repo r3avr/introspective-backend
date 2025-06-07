@@ -3,7 +3,11 @@ from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import check_password_hash
 from app.models import User
 
-main = Blueprint('main', __name__)  # ✅ this defines the blueprint
+main = Blueprint('main', __name__)
+
+@main.route('/')
+def index():
+    return render_template('index.html')
 
 @main.route('/login', methods=['POST'])
 def login():
