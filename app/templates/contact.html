@@ -1,9 +1,13 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact – Introspective</title>
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
   </head>
   <body class="contact-page">
     <header>
@@ -12,9 +16,9 @@
 
     <nav class="main-nav">
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="{{ url_for('main.index') }}">Home</a></li>
+        <li><a href="{{ url_for('main.about') }}">About</a></li>
+        <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
       </ul>
     </nav>
 
@@ -74,5 +78,58 @@
         </div>
       </div>
     </footer>
+
+    <!-- Login button fixed bottom-right corner -->
+    <button
+      id="login-toggle"
+      class="login-toggle-btn"
+      aria-expanded="false"
+      aria-controls="login-form"
+      aria-label="Open login form"
+      type="button"
+      aria-haspopup="true"
+    >
+      Login
+    </button>
+
+    <!-- Hidden login popup form -->
+    <div id="login-form" class="login-popup" hidden>
+      <form method="POST" action="/login" class="login-form-popup">
+        <input type="text" name="username" placeholder="Username" required />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <script>
+      const loginToggleBtn = document.getElementById("login-toggle");
+      const loginForm = document.getElementById("login-form");
+
+      loginToggleBtn.addEventListener("click", () => {
+        const isHidden = loginForm.hasAttribute("hidden");
+        if (isHidden) {
+          loginForm.removeAttribute("hidden");
+          loginToggleBtn.setAttribute("aria-expanded", "true");
+        } else {
+          loginForm.setAttribute("hidden", "");
+          loginToggleBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          !loginForm.contains(e.target) &&
+          !loginToggleBtn.contains(e.target)
+        ) {
+          loginForm.setAttribute("hidden", "");
+          loginToggleBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+    </script>
   </body>
 </html>
