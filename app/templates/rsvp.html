@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RSVP – Introspective</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body class="rsvp-page">
+    <header>
+      <div class="logo-banner" aria-label="Introspective logo"></div>
+    </header>
+
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a href="{{ url_for('main.index') }}">Home</a></li>
+        <li><a href="{{ url_for('main.about') }}">About</a></li>
+        <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h2>RSVP to Introspective</h2>
+          <p>
+            Reserve your spot for the next Tuesday night underground drum and
+            bass event.
+          </p>
+        </div>
+      </section>
+
+      <section id="rsvp" class="section">
+        <div class="container">
+          {% with messages = get_flashed_messages(with_categories=true) %} {% if
+          messages %}
+          <ul class="flash-messages">
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %} {% endwith %}
+
+          <form action="{{ url_for('main.rsvp') }}" method="post">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Introspective</p>
+        <div class="socials">
+          <a href="https://instagram.com/introspective407" target="_blank"
+            >Instagram</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

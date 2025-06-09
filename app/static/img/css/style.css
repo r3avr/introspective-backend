@@ -1,0 +1,318 @@
+/* RESET STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* BASE */
+  body {
+    background-color: #0f0f0f;
+    color: #e5e5e5;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+  
+  /* HEADER */
+  header {
+    background-color: #0f0f0f;
+    padding: 20px 0 10px 0;
+    border-bottom: 1px solid #222;
+    text-align: center;
+  }
+  
+  .logo-banner {
+    width: 50%;
+    height: 200px; /* Adjust height as needed */
+    background-image: url("/static/img/intro%20white.png");
+    background-size: cover;
+    background-position: center 50%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+  }
+  
+  /* NAVIGATION */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+    margin: 0 auto;
+  }
+  
+  .nav-links li a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: #ffffff;
+  }
+  
+  /* LOGIN FORM */
+  .login-form {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000; /* Keep it above other content */
+  }
+  
+  .login-form input {
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: 1px solid #444;
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  .login-form button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #444;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* FLASH MESSAGES */
+  .flash-messages {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+  }
+  
+  .flash-messages li {
+    margin-bottom: 5px;
+    color: lime;
+  }
+  
+  .flash-messages li.error {
+    color: red;
+  }
+  
+  /* HERO SECTION */
+  .hero {
+    background: linear-gradient(to right, #1f1f1f, #0f0f0f);
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 60vh;
+  }
+  
+  body.about-page .hero {
+    padding: 40px 20px;
+    min-height: 30vh;
+  }
+  
+  .hero .container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 30px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #0f0f0f;
+    padding: 12px 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .cta-button:hover {
+    background-color: #ddd;
+  }
+  
+  /* SECTIONS */
+  .section {
+    padding: 60px 20px;
+    border-top: 1px solid #222;
+    text-align: center;
+  }
+  
+  #about, #mission {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 1px solid #222;
+  }
+  
+  #about .container, #mission .container {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .section p {
+    color: #b0b0b0;
+    max-width: 700px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+  
+  #mission .container p {
+    margin-bottom: 15px;
+  }
+  
+  /* EVENT SECTION (same style as others) */
+  #event {
+    text-align: center;
+  }
+  
+  #event .container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  #event h3 {
+    margin-bottom: 20px;
+  }
+  
+  #event p {
+    font-size: 1rem;
+    color: #b0b0b0;
+  }
+  
+  /* FORM STYLES */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    background-color: #1c1c1c;
+    color: #e5e5e5;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    text-align: center;
+    resize: vertical;
+  }
+  
+  textarea {
+    min-height: 100px;
+  }
+  
+  button[type="submit"] {
+    padding: 12px 24px;
+    background-color: #ffffff;
+    color: #0f0f0f;
+    border: none;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #ddd;
+  }
+  
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 30px 0;
+    border-top: 1px solid #222;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  footer .socials a {
+    margin: 0 10px;
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  footer .socials a:hover {
+    color: #fff;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+  
+    .hero h2 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .login-form {
+      position: static;
+      flex-direction: column;
+      align-items: stretch;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 400px;
+    }
+  
+    .login-form input,
+    .login-form button {
+      width: 100%;
+    }
+  }
+  

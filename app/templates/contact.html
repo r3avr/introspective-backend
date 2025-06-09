@@ -1,0 +1,78 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact – Introspective</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="contact-page">
+    <header>
+      <div class="logo-banner" aria-label="Introspective logo"></div>
+    </header>
+
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h2>Get in Touch</h2>
+          <p>
+            For bookings, inquiries, or collaboration opportunities, please
+            reach out to us.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <form action="/contact" method="post">
+            <div class="form-row">
+              <input
+                type="text"
+                name="first_name"
+                placeholder="First Name"
+                required
+              />
+              <input
+                type="text"
+                name="last_name"
+                placeholder="Last Name"
+                required
+              />
+            </div>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              required
+            />
+            <input type="email" name="email" placeholder="Email" required />
+            <textarea
+              name="notes"
+              placeholder="Notes or message..."
+              rows="4"
+            ></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Introspective</p>
+        <div class="socials">
+          <a href="https://instagram.com/introspective407" target="_blank"
+            >Instagram</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
